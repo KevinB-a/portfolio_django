@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Kevin Billet Développeur web junior</div>
+                        <p class="wow fadeInDown" data-wow-delay="0.4s">Après plusieurs formations développeur web je recherche un poste qui me permettra de continuer 
+                           <br> mon évolution et d'exprimer ma curiosité pour les nouvelles technologies </p>
+                        <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">présentation</a>
+                        <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Contactez-moi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#    About section#}
+
+    <div id="about" class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-left">
+                        <h2 class="section-title">Présentation</h2>
+                        <div class="line"></div>
+                        <p>Je m'appelle Kevin Billet j'ai 28 ans je suis Développeur web junior passionné 
+                            par l'informatique depuis mon plus jeune age je suis a la recherche 
+                            d'une première experience professionnelle dans le domaine du développement.</p>
+                        
+                        <a href="images/about/cv.jpg" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-5 visible-md visible-lg wow fadeInDown" data-wow-delay="0.6s">
+                    <div class="profile">
+                        <img src="{{ about.image.url }}" alt="Profile image" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#    Services Section#}
+    <div id="services" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>MES COMPETENCES</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>Python3</h2> 
+                        </div>
+                    </div>
+            
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>SQL</h2> 
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>HTML5/CSS3</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>connaissances en c#</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>Git et Github</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>PostgreSQL</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>Bootstrap 4</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>Flask</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <i class="icon icon-wallet"></i>
+                            <h2>Django</h2>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    {#    Recent Works Section#}
+    <div id="portfolio" class="portfolio-area section-padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h2>Mes Projets</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for work in works %}
+                    <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                        <div class="gallery-items">
+                            <a class="view img" href="{{ work.image.url }}">
+                                <img src="{{ work.image.url }}" alt="work image">
+                            </a>
+
+                            <div class="gallery-text">
+                                <h2>{{ work.title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {#    Contact section#}
+
+    <div class="invitation-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="single-invite text-center">
+                    <h2>Avez-vous un projet en tete ?</h2>
+                    <p> si votre projet rentre dans mes compétences et que vous voulez le réaliser laisser moi un message.
+        
+                    </p>
+                    <a href="#contact" class="my-btn-3">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>Contactez-moi</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form">
+
+                    <form id="contact-form" method="post" action="#">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group wow fadeInDown" data-wow-delay="0.2s">
+                                        <input id="form_name" type="text" name="name" class="form-control"
+                                               placeholder="Entrez votre nom et prénom. *" required="required"
+                                               data-error="nom et prénom sont requis.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group wow fadeInDown" data-wow-delay="0.4s">
+                                        <input id="form_email" type="email" name="email" class="form-control"
+                                               placeholder="Entrez votre email. *" required="required"
+                                               data-error="un email valide est requis.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
+                                        <textarea id="form_message" name="message" class="form-control"
+                                                  placeholder="votre message *" rows="4" required="required"
+                                                  data-error="Laissez moi un message."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-send" value="">Send message</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
